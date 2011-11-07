@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @chapter.book.title %></h1>
+
+<h2><%= @chapter.name %></h2>
+
+<div id="chapter_content">
+  <%= raw @chapter.content.gsub /\n/, '<br />' %>
+</div>
+
+<div id="chapter_nav">
+	<%= link_to("<< Previous Chapter", @previous_chapter) if @previous_chapter %> &nbsp; 
+	<%= link_to("Chapters", @book) %> &nbsp; 
+	<%= link_to("Next Chapter>>", @next_chapter) if @next_chapter %> &nbsp; 
+</div> 
+
+
+<%= link_to 'Edit', edit_chapter_path(@chapter) %> |
+<%= link_to 'Back', chapters_path %>

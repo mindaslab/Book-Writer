@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Edit', edit_book_path(@book) %> | 
+<%= link_to 'Delete Book', @book, confirm: 'Are you sure?', method: :delete %>
+
+<p>
+	<h1><%= @book.title %></h1>
+	<%= link_to 'Add Chapter', :controller=>:chapters, :action=>:new, :id=>@book %>
+	<% unless @chapters.empty? %>
+		<ol>
+		<% for chapter in @chapters %>
+			<li><%= link_to chapter.name, chapter %></li>
+		<% end %>
+		</ol>
+	<% end %>
+</p>
+
+
+
+
